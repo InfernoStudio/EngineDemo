@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inferno", "Inferno.csproj", "{FDE1578A-7D6E-7289-5B54-ADBF3D67A7FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inferno.Plugins", "Inferno.Plugins.csproj", "{8B1FC559-A97A-9CE1-4A12-3C5CA67DADAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inferno.Editor", "Inferno.Editor.csproj", "{38A35F18-DA81-030C-E988-3706F1CBCC4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDE1578A-7D6E-7289-5B54-ADBF3D67A7FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDE1578A-7D6E-7289-5B54-ADBF3D67A7FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDE1578A-7D6E-7289-5B54-ADBF3D67A7FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDE1578A-7D6E-7289-5B54-ADBF3D67A7FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B1FC559-A97A-9CE1-4A12-3C5CA67DADAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B1FC559-A97A-9CE1-4A12-3C5CA67DADAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B1FC559-A97A-9CE1-4A12-3C5CA67DADAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B1FC559-A97A-9CE1-4A12-3C5CA67DADAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38A35F18-DA81-030C-E988-3706F1CBCC4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38A35F18-DA81-030C-E988-3706F1CBCC4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38A35F18-DA81-030C-E988-3706F1CBCC4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38A35F18-DA81-030C-E988-3706F1CBCC4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
