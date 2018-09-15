@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using WebSocketSharp;
 using Google.Protobuf;
-using Newtonsoft.Json;
 
 
 public class NetworkManager : MonoBehaviour 
@@ -91,13 +90,6 @@ public class NetworkManager : MonoBehaviour
 
         _actionDict.Add(request.Id, callback);
     }
-
-	public void Send(Message msgToSend,Action<string> callback)
-	{
-		string msg = JsonConvert.SerializeObject(msgToSend);
-		_actionDict.Add(msgToSend.id, callback);
-		connection.Send(msg);
-	}
 
     private void OnConnectionError(object sender, ErrorEventArgs e)
     {
