@@ -3,9 +3,7 @@ using UnityEngine.UI;
 using Google.Protobuf;
 using System;
 using Com.Inferno.Protos;
-using Facebook.Unity;
 using System.Collections.Generic;
-using Newtonsoft.Json;
 
 public class UserRegistration : MonoBehaviour 
 {
@@ -63,16 +61,4 @@ public class UserRegistration : MonoBehaviour
         _response = response;
         responseNotProcessed = true;
     }
-
-	public void OnFacebookClicked()
-	{
-		var perms = new List<string>() { "public_profile", "email" };
-		FB.LogInWithReadPermissions(perms, AuthCallback);
-	}
-
-	private void AuthCallback(ILoginResult result)
-	{
-		var accessToken = result.AccessToken;
-		
-	}
 }
