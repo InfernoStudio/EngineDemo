@@ -5,12 +5,12 @@ using System;
 using Com.Inferno.Protos;
 using Facebook.Unity;
 using System.Collections.Generic;
-using Facebook.Unity;
+using Newtonsoft.Json;
 
 public class UserRegistration : MonoBehaviour 
 {
     public static UserRegistration Instance;
-    public UIInput m_UserName;
+    public InputField userName;
     public CreateUserResponseProto _response;
     public bool responseNotProcessed = true;
 	
@@ -19,34 +19,42 @@ public class UserRegistration : MonoBehaviour
         Instance = this;
     }
 
-    public void OnCreateClicked()
-    {
-        Player player = new Player();
-        player.name = m_UserName.label.text;
-        player.id = Guid.NewGuid().ToString();
+	public void Start()
+	{
+		
+	}
 
-		User usrBuilder = new User();
+	public void OnCreateClicked()
+	{  
+		string username = userName.text;
 
-        usrBuilder.Name = player.name;
-        usrBuilder.Id = player.id;
-		usrBuilder.Udid = SystemInfo.deviceUniqueIdentifier;
-        usrBuilder.FbId = PlayerPrefs.GetString(GameConstants.PlayerPrefKeys.FB_ID);
-		Request req = RequestGenerator.CreateRequest(RequestType.CreateNewUser, usrBuilder.ToByteString());
+		if (username.ToLower().Equals("username") || string.IsNullOrEmpty(username))
+		{
+			
+		}
 
-        NetworkManager.Instance.SendRequest(req, OnResponseReceived);
+		UserCreate createUserRequest = new UserCreate();
+		createUserRequest.Name = userName.text;
+		createUserRequest.Udid = SystemInfo.deviceUniqueIdentifier;
+		createUserRequest.FbId = "";
+		createUserRequest.Platform = "ANDROID";
+		Request request = RequestGenerator.CreateRequest(RequestType.CreateNewUser, createUserRequest.ToByteString());
+		NetworkManager.Instance.SendRequest(request, OnResponseReceived);
     }
 
 	public void OnResponseReceived(string requestId)
 	{
 		CreateUserResponseProto response =	NetworkManager.Instance.GetResponse<CreateUserResponseProto>(requestId);
 
-		if(response.Status == ResponseStatus.Success)
+		if (response.Status == ResponseStatus.Success)
 		{
-			Debug.Log("New User Created");
+			User user = User.Parser.ParseFrom(response.Payload);
+			Debug.Log(" New User Created " + user.Name);
 		}
 		else if (response.Status == ResponseStatus.UserExist)
 		{
-			Debug.Log("User with same device id already exist");
+			User user = User.Parser.ParseFrom(response.Payload);
+			Debug.Log("User with same device id already exist : " + user.Name);
 		}
 	}
 
@@ -64,33 +72,7 @@ public class UserRegistration : MonoBehaviour
 
 	private void AuthCallback(ILoginResult result)
 	{
-		if (FB.IsLoggedIn)
-		{
-			// AccessToken class will have session details
-			var aToken = AccessToken.CurrentAccessToken;
-			string accessToken = PlayerPrefs.GetString(GameConstants.PlayerPrefKeys.FACEBOOK_ACCESS_TOKEN);
-			string userId = PlayerPrefs.GetString(GameConstants.PlayerPrefKeys.FB_ID);
-			if (string.IsNullOrEmpty(accessToken) || !accessToken.Equals(aToken.TokenString))
-			{
-				PlayerPrefs.SetString(GameConstants.PlayerPrefKeys.FACEBOOK_ACCESS_TOKEN, aToken.TokenString);
-			}
-
-			if (string.IsNullOrEmpty(userId))
-			{
-				PlayerPrefs.SetString(GameConstants.PlayerPrefKeys.FB_ID, aToken.UserId);
-			}
-
-			// Print current access token's User ID
-			Debug.Log(aToken.UserId);
-			// Print current access token's granted permissions
-			foreach (string perm in aToken.Permissions)
-			{
-				Debug.Log(perm);
-			}
-		}
-		else
-		{
-			Debug.Log("User cancelled login");
-		}
+		var accessToken = result.AccessToken;
+		
 	}
 }

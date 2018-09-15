@@ -4,6 +4,7 @@ syntax = "proto3";
 import "SharedEnums.proto";
 
 package com.inferno.protos;
+
 option java_outer_classname = "RequestProtos";
 
 message Request

@@ -11,4 +11,9 @@ public class GameConstants
 		public const string FACEBOOK_ACCESS_TOKEN = "FacebookAccessToken";
 	}
 
+	public class Player
+	{
+		public const string STARTUP_PLAYER_STATUS = "PlayerStatus"; 
+	}
+
 }

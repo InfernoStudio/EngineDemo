@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using WebSocketSharp;
 using Google.Protobuf;
+using Newtonsoft.Json;
+
 
 public class NetworkManager : MonoBehaviour 
 {
@@ -12,7 +14,7 @@ public class NetworkManager : MonoBehaviour
     public WebSocket connection;
     public bool connectionError = false;
     public bool connectionClosed = false;
-    public string connectionString = "ws://localhost:9090/connection";
+    public string connectionString = "ws://localhost:3000";
     public bool responseReceived = true;
 
     private Dictionary<string, System.Action<string>> _actionDict = new Dictionary<string, System.Action<string>>();
@@ -48,6 +50,7 @@ public class NetworkManager : MonoBehaviour
     }
 
     int reconnectAttempts = 0;
+
     public void TryReconnect()
     {
         reconnectAttempts++;
@@ -89,6 +92,13 @@ public class NetworkManager : MonoBehaviour
         _actionDict.Add(request.Id, callback);
     }
 
+	public void Send(Message msgToSend,Action<string> callback)
+	{
+		string msg = JsonConvert.SerializeObject(msgToSend);
+		_actionDict.Add(msgToSend.id, callback);
+		connection.Send(msg);
+	}
+
     private void OnConnectionError(object sender, ErrorEventArgs e)
     {
         Debug.Log(string.Format("Error Occured {0} ", e.Message));
@@ -103,47 +113,50 @@ public class NetworkManager : MonoBehaviour
 
     private void OnMessegeReceived(object sender, MessageEventArgs e)
     {
-        Debug.Log(string.Format("Messege Received from server {0} ", e.Data));
 
-        byte[] response = e.RawData;
+        Debug.Log(string.Format("Messege Received from server {0} ", e.RawData));
+
+		byte[] response = e.RawData;
 
         int cursor = 0;
-        while (cursor < response.Length)
-        {
-            int j = 0;
-            int headerIndex = 0;
-            byte[] header = new byte[RequestGenerator.REQUEST_SIZE];
-            int headerEnd = (cursor + RequestGenerator.REQUEST_SIZE);
-            for (; cursor < headerEnd; headerIndex++, cursor++)
-            {
-                header[headerIndex] = response[cursor];
-            }
 
-            Array.Reverse(header);
-            int size = BitConverter.ToInt32(header, 0);
+		while (cursor < response.Length)
+		{
+			int j = 0;
+			int headerIndex = 0;
+			byte[] header = new byte[RequestGenerator.REQUEST_SIZE];
+			int headerEnd = (cursor + RequestGenerator.REQUEST_SIZE);
+			for (; cursor < headerEnd; headerIndex++, cursor++)
+			{
+				header[headerIndex] = response[cursor];
+			}
 
-            byte[] evtRequest = new byte[size];
-            int i = 0;
-            int msgEnd = (cursor + size);
-            for (; cursor < msgEnd; cursor++, i++)
-            { 
-                evtRequest[i] = response[cursor];
-            }
-            Response proto = Response.Parser.ParseFrom(evtRequest);
-            object responsePayloadObject = HandleResponse(proto);
-			
-			if(requestIdsToResponsesList.ContainsKey(proto.Id))
+			//Array.Reverse(header);
+			int size = BitConverter.ToInt32(header, 0);
+
+			byte[] evtRequest = new byte[size];
+			int i = 0;
+			int msgEnd = (cursor + size);
+			for (; cursor < msgEnd; cursor++, i++)
+			{
+				evtRequest[i] = response[cursor];
+			}
+
+			Response proto = Response.Parser.ParseFrom(evtRequest);
+			object responsePayloadObject = HandleResponse(proto);
+
+			if (requestIdsToResponsesList.ContainsKey(proto.Id))
 			{
 				requestIdsToResponsesList[proto.Id].Add(responsePayloadObject);
 			}
 			else
 			{
-				requestIdsToResponsesList.Add(proto.Id,new List<object>());
+				requestIdsToResponsesList.Add(proto.Id, new List<object>());
 				requestIdsToResponsesList[proto.Id].Add(responsePayloadObject);
 			}
 			_responseIdsReceived.Add(proto.Id);
-        }
-    }
+		}
+	}
 
     public object HandleResponse(Response response)
     {
@@ -188,17 +201,6 @@ public class NetworkManager : MonoBehaviour
 		}
 
 		return (T)response;
-		
-		//for(int i=0;i < _responseRecievedList.Count;i++)
-		//{
-		//	if (_responseRecievedList[i] is T)
-		//	{
-		//		response = _responseRecievedList[i];
-		//		_responseRecievedList[i] = null;
-		//	}
-		//}
-		//_responseRecievedList.RemoveAll(item => item == null);
-		//return (T)response;
 	}
 	
     public void Update()

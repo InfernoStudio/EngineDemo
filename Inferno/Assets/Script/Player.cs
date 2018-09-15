@@ -2,14 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 public class Player
 {
-    public string name { get; set; }
+	public string name;
+	public string fb_id;
+	public string udid;
+	public string platform;
+}
 
-    public string id { get; set; }
+public class Message
+{
+	public string id;
+	public string type;
+	public object message;
 
-	public string fb_id { get; set; }
-
-	public string udid { get; set; }
+	public Message()
+	{
+		id = Guid.NewGuid().ToString();
+	}
 }

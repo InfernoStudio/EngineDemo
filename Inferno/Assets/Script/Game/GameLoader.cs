@@ -4,15 +4,25 @@ using UnityEngine;
 using Com.Inferno.Protos;
 using Google.Protobuf;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameLoader : MonoBehaviour
 {
-	public GameObject userRegistrationScreen;
+	public StartUpResponse.Types.PlayerStatus currentPlayerStatus = StartUpResponse.Types.PlayerStatus.None;
+
+
+
+
+	private void Awake()
+	{
+		DontDestroyOnLoad(this);
+	}
 
 	void Start ()
 	{
 		StartUp startUp = new StartUp();
 		VersionProto version = new VersionProto();
+
 		version.MajorNumber = 1;
 		version.MinorNumber = 0;
 		version.PatchNumber = 0;
@@ -21,6 +31,7 @@ public class GameLoader : MonoBehaviour
 		startUp.Platform = "ANDROID";
 		startUp.Udid = SystemInfo.deviceUniqueIdentifier;
 		string fb_id = PlayerPrefs.GetString(GameConstants.PlayerPrefKeys.FB_ID);
+		startUp.StaticDataHash = Guid.NewGuid().ToString();
 
 		if(!string.IsNullOrEmpty(fb_id))
 		{
@@ -33,36 +44,47 @@ public class GameLoader : MonoBehaviour
 
 		Request request = RequestGenerator.CreateRequest(RequestType.Startup, startUp.ToByteString());
 
-		NetworkManager.Instance.SendRequest(request, HandleStartupResponse); 
-		
+		NetworkManager.Instance.SendRequest(request, HandleStartupResponse);
 	}
 
 	public void HandleStartupResponse(string requestId)
 	{
 		StartUpResponse startUpResponse =  NetworkManager.Instance.GetResponse<StartUpResponse>(requestId);
 
-		Debug.Log("Startup Response received");
-		Debug.Log("Startup Status : " + startUpResponse.StartupStatus.ToString());
-		Debug.Log("Player Status : " + startUpResponse.PlayerStatus.ToString());
+		Debug.Log(" startup response received ");
+		Debug.Log(" startup status : " + startUpResponse.StartupStatus.ToString());
+		Debug.Log(" player status : " + startUpResponse.PlayerStatus.ToString());
 
 		if(startUpResponse.StartupStatus == StartUpResponse.Types.StartupResponseStatus.MajorUpdate)
 		{
+			//PopupManager.Instance.CreatePopup("Major Update", startUpResponse.Message, "update", null, delegate	{
+			//	Debug.LogError(" going to update page ");
+			//});
 			return;
+		}
+		else if(startUpResponse.StartupStatus == StartUpResponse.Types.StartupResponseStatus.MinorUpdate)
+		{
+			//PopupManager.Instance.CreatePopup("Minor Update", startUpResponse.Message, "update", "skip", delegate {
+			//	Debug.LogError(" going to update page ");
+			//},
+			//delegate {
+
+			//});
 		}
 
 		if (startUpResponse.PlayerStatus == StartUpResponse.Types.PlayerStatus.PlayerBanned)
 		{
+			//PopupManager.Instance.CreatePopup("Banned!!", startUpResponse.Message, "update", null, delegate	{
+			//	Debug.LogError(" close the game ");
+			//});
 			return;
 		}
-		else if(startUpResponse.PlayerStatus == StartUpResponse.Types.PlayerStatus.PlayerNotFound)
+		else if(startUpResponse.PlayerStatus    == StartUpResponse.Types.PlayerStatus.PlayerNotFound 
+				|| startUpResponse.PlayerStatus == StartUpResponse.Types.PlayerStatus.PlayerFound)
 		{
-			userRegistrationScreen.SetActive(true);
-			return; 
-		}
-		else if(startUpResponse.PlayerStatus == StartUpResponse.Types.PlayerStatus.PlayerFound)
-		{
-			Debug.Log("Player Found : ");
+			Whiteboard.AddToWhiteboard(GameConstants.Player.STARTUP_PLAYER_STATUS, startUpResponse.PlayerStatus);
 			SceneManager.LoadScene("GameScene");
+			return;
 		}
 	}
 
