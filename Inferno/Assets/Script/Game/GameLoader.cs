@@ -82,7 +82,7 @@ public class GameLoader : MonoBehaviour
 		else if(startUpResponse.PlayerStatus    == StartUpResponse.Types.PlayerStatus.PlayerNotFound 
 				|| startUpResponse.PlayerStatus == StartUpResponse.Types.PlayerStatus.PlayerFound)
 		{
-			Whiteboard.AddToWhiteboard(GameConstants.Player.STARTUP_PLAYER_STATUS, startUpResponse.PlayerStatus);
+			//Whiteboard.AddToWhiteboard(GameConstants.Player.STARTUP_PLAYER_STATUS, startUpResponse.PlayerStatus);
 			SceneManager.LoadScene("GameScene");
 			return;
 		}

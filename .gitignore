@@ -1,2 +1,9 @@
 Inferno/Library/
 Inferno/Assets/Frameworks/FacebookSDK/
+Inferno/Temp/
+Inferno/obj/
+Inferno/.vs/Inferno/v15/
+Inferno/Assembly-CSharp.csproj
+Inferno/Assembly-CSharp-firstpass.csproj
+Inferno/Assembly-CSharp-Editor.csproj
+Inferno/Assemblies.csproj
