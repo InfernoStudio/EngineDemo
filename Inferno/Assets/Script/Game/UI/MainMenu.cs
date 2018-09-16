@@ -16,10 +16,10 @@ public class MainMenu : MonoBehaviour
 		else if (playerStatus == StartUpResponse.Types.PlayerStatus.PlayerNotFound)
 		{
 			Debug.Log("Player Not Found Startting Tutorial");
-			ActionManager.instance.TriggerEvent("OpenGenericPopup", new Hashtable {
+			Hashtable table = new Hashtable();
 
-
-			});
+			table.Add("logged_in", true);
+			ActionManager.instance.TriggerEvent("OpenGenericPopup",table);
 		}
 	}
 }

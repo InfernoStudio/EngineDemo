@@ -18,6 +18,8 @@ public class PopupManager : MonoBehaviour
 
 	public void CreatePopup(Hashtable properties)
 	{
+		Debug.LogError("Logged_in : " + properties["logged_in"]);
+
 		GenericPopup genericPopup = Instantiate(genericPopupPrefab, popupPanel);
 		genericPopup.SetPopupProperties(properties);
 	}
