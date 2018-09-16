@@ -7,15 +7,19 @@ public class MainMenu : MonoBehaviour
 {
 	void Start ()
 	{
-		//var playerStatus = Whiteboard.Get<StartUpResponse.Types.PlayerStatus>(GameConstants.Player.STARTUP_PLAYER_STATUS,true);
+		var playerStatus = Whiteboard.Get<StartUpResponse.Types.PlayerStatus>(GameConstants.Player.STARTUP_PLAYER_STATUS);
 
-		//if (playerStatus == StartUpResponse.Types.PlayerStatus.PlayerFound)
-		//{
-		//	Debug.Log("Player Found");
-		//}
-		//else if(playerStatus == StartUpResponse.Types.PlayerStatus.PlayerNotFound)
-		//{
-		//	Debug.Log("Player Not Found Startting Tutorial");
-		//}
+		if (playerStatus == StartUpResponse.Types.PlayerStatus.PlayerFound)
+		{
+			Debug.Log("Player Found");
+		}
+		else if (playerStatus == StartUpResponse.Types.PlayerStatus.PlayerNotFound)
+		{
+			Debug.Log("Player Not Found Startting Tutorial");
+			ActionManager.instance.TriggerEvent("OpenGenericPopup", new Hashtable {
+
+
+			});
+		}
 	}
 }

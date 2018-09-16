@@ -57,6 +57,7 @@ public class GameLoader : MonoBehaviour
 
 		if(startUpResponse.StartupStatus == StartUpResponse.Types.StartupResponseStatus.MajorUpdate)
 		{
+			ActionManager.instance.TriggerEvent("OpenUserLogin");
 			//PopupManager.Instance.CreatePopup("Major Update", startUpResponse.Message, "update", null, delegate	{
 			//	Debug.LogError(" going to update page ");
 			//});
@@ -82,7 +83,7 @@ public class GameLoader : MonoBehaviour
 		else if(startUpResponse.PlayerStatus    == StartUpResponse.Types.PlayerStatus.PlayerNotFound 
 				|| startUpResponse.PlayerStatus == StartUpResponse.Types.PlayerStatus.PlayerFound)
 		{
-			//Whiteboard.AddToWhiteboard(GameConstants.Player.STARTUP_PLAYER_STATUS, startUpResponse.PlayerStatus);
+			Whiteboard.SetProperty(GameConstants.Player.STARTUP_PLAYER_STATUS, startUpResponse.PlayerStatus);
 			SceneManager.LoadScene("GameScene");
 			return;
 		}
