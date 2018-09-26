@@ -13,8 +13,15 @@ public class NetworkManager : MonoBehaviour
     public WebSocket connection;
     public bool connectionError = false;
     public bool connectionClosed = false;
-    public string connectionString = "ws://localhost:3000";
-    public bool responseReceived = true;
+#if PRODUCTION
+	public string connectionString = "ws://localhost:3000";
+#elif STAGING
+	public string connectionString = "ws://ec2-18-191-173-186.us-east-2.compute.amazonaws.com:9000";
+#else
+	public string connectionString = "ws://localhost:9000";
+#endif
+
+	public bool responseReceived = true;
 
     private Dictionary<string, System.Action<string>> _actionDict = new Dictionary<string, System.Action<string>>();
     private List<object> _responseRecievedList = new List<object>();
@@ -22,7 +29,7 @@ public class NetworkManager : MonoBehaviour
 
 	private Dictionary<string, List<object>> requestIdsToResponsesList = new Dictionary<string, List<object>>();
 
-	private void Awake()
+	public void Awake()
 	{
 		Instance = this;
 		DontDestroyOnLoad(gameObject);
@@ -32,6 +39,8 @@ public class NetworkManager : MonoBehaviour
 		connection.OnClose += OnConnectionClose;
 		connection.OnError += OnConnectionError;
 		connection.Connect();
+
+		DontDestroyOnLoad(gameObject);
 	}
 
 	void Start () 
@@ -105,7 +114,6 @@ public class NetworkManager : MonoBehaviour
 
     private void OnMessegeReceived(object sender, MessageEventArgs e)
     {
-
         Debug.Log(string.Format("Messege Received from server {0} ", e.RawData));
 
 		byte[] response = e.RawData;
@@ -158,6 +166,8 @@ public class NetworkManager : MonoBehaviour
                 return CreateUserResponseProto.Parser.ParseFrom(response.Payload);
 			case ResponseType.StartupResponse:
 				return StartUpResponse.Parser.ParseFrom(response.Payload);
+			case ResponseType.LoadGameDataResponse:
+				return DataResponse.Parser.ParseFrom(response.Payload);
 			default:
                 return null;
         }

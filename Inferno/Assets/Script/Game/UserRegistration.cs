@@ -4,22 +4,16 @@ using Google.Protobuf;
 using System;
 using Com.Inferno.Protos;
 using System.Collections.Generic;
+using System.Collections;
 
-public class UserRegistration : MonoBehaviour 
+public class UserRegistration : Popup 
 {
-    public static UserRegistration Instance;
     public InputField userName;
     public CreateUserResponseProto _response;
     public bool responseNotProcessed = true;
 	
-    public void Awake()
-    {
-        Instance = this;
-    }
-
 	public void Start()
 	{
-		
 	}
 
 	public void OnCreateClicked()
@@ -46,14 +40,23 @@ public class UserRegistration : MonoBehaviour
 
 		if (response.Status == ResponseStatus.Success)
 		{
-			User user = User.Parser.ParseFrom(response.Payload);
-			Debug.Log(" New User Created " + user.Name);
+			UserProfile user = UserProfile.Parser.ParseFrom(response.Payload);
+			Util.Log(" New User Created " + user.Username);
+			Hashtable parameters = new Hashtable();
+			parameters.Add(GameConstants.Player.PLAYER_PROFILE, user);
+			ActionManager.instance.TriggerEvent(StringConstants.EventNames.UPDATE_PLAYER_PROFILE, parameters);
 		}
 		else if (response.Status == ResponseStatus.UserExist)
 		{
-			User user = User.Parser.ParseFrom(response.Payload);
-			Debug.Log("User with same device id already exist : " + user.Name);
+			UserProfile user = UserProfile.Parser.ParseFrom(response.Payload);
+			Hashtable parameters = new Hashtable();
+			parameters.Add(GameConstants.Player.PLAYER_PROFILE, user);
+			ActionManager.instance.TriggerEvent(StringConstants.EventNames.UPDATE_PLAYER_PROFILE, parameters);
+			Debug.Log("User with same device id already exist : " + user.Username);
 		}
+
+		DataManager.Instance.SendDataRequest();
+		Close();
 	}
 
     public void OnResponseReceived(CreateUserResponseProto response)
@@ -61,4 +64,19 @@ public class UserRegistration : MonoBehaviour
         _response = response;
         responseNotProcessed = true;
     }
+
+	public override void Open()
+	{
+		gameObject.SetActive(true);
+	}
+
+	public override void Close()
+	{
+		gameObject.SetActive(false);
+	}
+
+	public override void SetProperties(Hashtable properties)
+	{
+		
+	}
 }

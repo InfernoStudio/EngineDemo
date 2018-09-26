@@ -142,8 +142,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectionError: 0
   connectionClosed: 0
-  connectionString: ws://192.168.0.100:9000
-  responseReceived: 1
+  connectionString: ws://localhost:9000
+  responseReceived: 0
 --- !u!4 &527475490
 Transform:
   m_ObjectHideFlags: 0
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea15040fd3612e24cab11040d889779a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Popups: []
+  popupReferences: []
   genericPopupPrefab: {fileID: 114506395280155920, guid: 7b77166a9f378984b8806e8065b45ffb,
     type: 2}
   popupPanel: {fileID: 710253858}

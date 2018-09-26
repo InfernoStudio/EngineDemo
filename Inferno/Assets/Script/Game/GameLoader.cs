@@ -84,6 +84,7 @@ public class GameLoader : MonoBehaviour
 				|| startUpResponse.PlayerStatus == StartUpResponse.Types.PlayerStatus.PlayerFound)
 		{
 			Whiteboard.SetProperty(GameConstants.Player.STARTUP_PLAYER_STATUS, startUpResponse.PlayerStatus);
+			Whiteboard.SetProperty(GameConstants.Player.PLAYER_PROFILE, startUpResponse.PlayerProfile);
 			SceneManager.LoadScene("GameScene");
 			return;
 		}

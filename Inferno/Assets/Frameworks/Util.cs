@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using UnityEngine;
 
 public class Util
 {
@@ -15,4 +16,19 @@ public class Util
         bf.Serialize(stream, objectToConvert);
         return stream.ToArray();
     }
+
+
+	public static void Log(string log)
+	{
+#if LOG_ENABLED
+		Debug.Log(log);
+#endif
+	}
+
+	public static void LogError(string log)
+	{
+#if LOG_ENABLED
+		Debug.LogError(log);
+#endif
+	}
 }

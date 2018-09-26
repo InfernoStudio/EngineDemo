@@ -24,28 +24,30 @@ namespace Com.Inferno.Protos {
     static StartUpReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cg1TdGFydFVwLnByb3RvEhJjb20uaW5mZXJuby5wcm90b3MaEVNoYXJlZEVu",
-            "dW1zLnByb3RvIk0KDFZlcnNpb25Qcm90bxITCgttYWpvck51bWJlchgBIAEo",
-            "BRITCgttaW5vck51bWJlchgCIAEoBRITCgtwYXRjaE51bWJlchgDIAEoBSKC",
-            "AQoHU3RhcnRVcBIMCgR1ZGlkGAEgASgJEgwKBGZiaWQYAiABKAkSEAoIcGxh",
-            "dGZvcm0YAyABKAkSMQoHdmVyc2lvbhgEIAEoCzIgLmNvbS5pbmZlcm5vLnBy",
-            "b3Rvcy5WZXJzaW9uUHJvdG8SFgoOc3RhdGljRGF0YUhhc2gYBSABKAkipwMK",
-            "D1N0YXJ0VXBSZXNwb25zZRIKCgJpZBgBIAEoCRJQCg1zdGFydHVwU3RhdHVz",
-            "GAIgASgOMjkuY29tLmluZmVybm8ucHJvdG9zLlN0YXJ0VXBSZXNwb25zZS5T",
-            "dGFydHVwUmVzcG9uc2VTdGF0dXMSRgoMcGxheWVyU3RhdHVzGAMgASgOMjAu",
-            "Y29tLmluZmVybm8ucHJvdG9zLlN0YXJ0VXBSZXNwb25zZS5QbGF5ZXJTdGF0",
-            "dXMSDwoHbWVzc2FnZRgEIAEoCSJ6ChVTdGFydHVwUmVzcG9uc2VTdGF0dXMS",
-            "FwoTU1RBUlRVUF9TVEFUVVNfTk9ORRAAEhAKDE1BSk9SX1VQREFURRABEhAK",
-            "DE1JTk9SX1VQREFURRACEg0KCU5PX1VQREFURRADEgsKB1NVQ0NFU1MQBBII",
-            "CgRGQUlMEAUiYQoMUGxheWVyU3RhdHVzEhYKElBMQVlFUl9TVEFUVVNfTk9O",
-            "RRAAEhQKEFBMQVlFUl9OT1RfRk9VTkQQARIQCgxQTEFZRVJfRk9VTkQQAhIR",
-            "Cg1QTEFZRVJfQkFOTkVEEANCD0INU3RhcnR1cFByb3Rvc2IGcHJvdG8z"));
+            "Cg1TdGFydFVwLnByb3RvEhJjb20uaW5mZXJuby5wcm90b3MaClVzZXIucHJv",
+            "dG8iTQoMVmVyc2lvblByb3RvEhMKC21ham9yTnVtYmVyGAEgASgFEhMKC21p",
+            "bm9yTnVtYmVyGAIgASgFEhMKC3BhdGNoTnVtYmVyGAMgASgFIoIBCgdTdGFy",
+            "dFVwEgwKBHVkaWQYASABKAkSDAoEZmJpZBgCIAEoCRIQCghwbGF0Zm9ybRgD",
+            "IAEoCRIxCgd2ZXJzaW9uGAQgASgLMiAuY29tLmluZmVybm8ucHJvdG9zLlZl",
+            "cnNpb25Qcm90bxIWCg5zdGF0aWNEYXRhSGFzaBgFIAEoCSLfAwoPU3RhcnRV",
+            "cFJlc3BvbnNlEgoKAmlkGAEgASgJElAKDXN0YXJ0dXBTdGF0dXMYAiABKA4y",
+            "OS5jb20uaW5mZXJuby5wcm90b3MuU3RhcnRVcFJlc3BvbnNlLlN0YXJ0dXBS",
+            "ZXNwb25zZVN0YXR1cxJGCgxwbGF5ZXJTdGF0dXMYAyABKA4yMC5jb20uaW5m",
+            "ZXJuby5wcm90b3MuU3RhcnRVcFJlc3BvbnNlLlBsYXllclN0YXR1cxIPCgdt",
+            "ZXNzYWdlGAQgASgJEjYKDXBsYXllclByb2ZpbGUYBSABKAsyHy5jb20uaW5m",
+            "ZXJuby5wcm90b3MuVXNlclByb2ZpbGUiegoVU3RhcnR1cFJlc3BvbnNlU3Rh",
+            "dHVzEhcKE1NUQVJUVVBfU1RBVFVTX05PTkUQABIQCgxNQUpPUl9VUERBVEUQ",
+            "ARIQCgxNSU5PUl9VUERBVEUQAhINCglOT19VUERBVEUQAxILCgdTVUNDRVNT",
+            "EAQSCAoERkFJTBAFImEKDFBsYXllclN0YXR1cxIWChJQTEFZRVJfU1RBVFVT",
+            "X05PTkUQABIUChBQTEFZRVJfTk9UX0ZPVU5EEAESEAoMUExBWUVSX0ZPVU5E",
+            "EAISEQoNUExBWUVSX0JBTk5FRBADQg9CDVN0YXJ0dXBQcm90b3NiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Com.Inferno.Protos.SharedEnumsReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Com.Inferno.Protos.UserReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Com.Inferno.Protos.VersionProto), global::Com.Inferno.Protos.VersionProto.Parser, new[]{ "MajorNumber", "MinorNumber", "PatchNumber" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Com.Inferno.Protos.StartUp), global::Com.Inferno.Protos.StartUp.Parser, new[]{ "Udid", "Fbid", "Platform", "Version", "StaticDataHash" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Inferno.Protos.StartUpResponse), global::Com.Inferno.Protos.StartUpResponse.Parser, new[]{ "Id", "StartupStatus", "PlayerStatus", "Message" }, null, new[]{ typeof(global::Com.Inferno.Protos.StartUpResponse.Types.StartupResponseStatus), typeof(global::Com.Inferno.Protos.StartUpResponse.Types.PlayerStatus) }, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Inferno.Protos.StartUpResponse), global::Com.Inferno.Protos.StartUpResponse.Parser, new[]{ "Id", "StartupStatus", "PlayerStatus", "Message", "PlayerProfile" }, null, new[]{ typeof(global::Com.Inferno.Protos.StartUpResponse.Types.StartupResponseStatus), typeof(global::Com.Inferno.Protos.StartUpResponse.Types.PlayerStatus) }, null)
           }));
     }
     #endregion
@@ -513,6 +515,7 @@ namespace Com.Inferno.Protos {
       startupStatus_ = other.startupStatus_;
       playerStatus_ = other.playerStatus_;
       message_ = other.message_;
+      playerProfile_ = other.playerProfile_ != null ? other.playerProfile_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -565,6 +568,17 @@ namespace Com.Inferno.Protos {
       }
     }
 
+    /// <summary>Field number for the "playerProfile" field.</summary>
+    public const int PlayerProfileFieldNumber = 5;
+    private global::Com.Inferno.Protos.UserProfile playerProfile_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Com.Inferno.Protos.UserProfile PlayerProfile {
+      get { return playerProfile_; }
+      set {
+        playerProfile_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as StartUpResponse);
@@ -582,6 +596,7 @@ namespace Com.Inferno.Protos {
       if (StartupStatus != other.StartupStatus) return false;
       if (PlayerStatus != other.PlayerStatus) return false;
       if (Message != other.Message) return false;
+      if (!object.Equals(PlayerProfile, other.PlayerProfile)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -592,6 +607,7 @@ namespace Com.Inferno.Protos {
       if (StartupStatus != 0) hash ^= StartupStatus.GetHashCode();
       if (PlayerStatus != 0) hash ^= PlayerStatus.GetHashCode();
       if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (playerProfile_ != null) hash ^= PlayerProfile.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -621,6 +637,10 @@ namespace Com.Inferno.Protos {
         output.WriteRawTag(34);
         output.WriteString(Message);
       }
+      if (playerProfile_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(PlayerProfile);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -640,6 +660,9 @@ namespace Com.Inferno.Protos {
       }
       if (Message.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      if (playerProfile_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PlayerProfile);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -663,6 +686,12 @@ namespace Com.Inferno.Protos {
       }
       if (other.Message.Length != 0) {
         Message = other.Message;
+      }
+      if (other.playerProfile_ != null) {
+        if (playerProfile_ == null) {
+          playerProfile_ = new global::Com.Inferno.Protos.UserProfile();
+        }
+        PlayerProfile.MergeFrom(other.PlayerProfile);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -689,6 +718,13 @@ namespace Com.Inferno.Protos {
           }
           case 34: {
             Message = input.ReadString();
+            break;
+          }
+          case 42: {
+            if (playerProfile_ == null) {
+              playerProfile_ = new global::Com.Inferno.Protos.UserProfile();
+            }
+            input.ReadMessage(playerProfile_);
             break;
           }
         }

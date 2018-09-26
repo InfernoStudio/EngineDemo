@@ -31,13 +31,18 @@ namespace Com.Inferno.Protos {
             "ZGlkGAMgASgJEhAKCHBsYXRmb3JtGAQgASgJIm8KF0NyZWF0ZVVzZXJSZXNw",
             "b25zZVByb3RvEg8KB21lc3NhZ2UYASABKAkSMgoGc3RhdHVzGAIgASgOMiIu",
             "Y29tLmluZmVybm8ucHJvdG9zLlJlc3BvbnNlU3RhdHVzEg8KB3BheWxvYWQY",
-            "AyABKAxCDEIKVXNlclByb3Rvc2IGcHJvdG8z"));
+            "AyABKAwiugEKC1VzZXJQcm9maWxlEhAKCHVzZXJuYW1lGAEgASgJEgoKAnhw",
+            "GAIgASgFEgwKBGdvbGQYAyABKAUSDAoEZ2VtcxgEIAEoBRINCgVzbG90cxgF",
+            "IAMoCRIQCgh0cm9waGllcxgGIAEoBRIOCgZjbGFuaWQYByABKAkSFQoNaXRl",
+            "bXNVbmxvY2tlZBgIIAMoCRIXCg9pdGVtc0luUHJvZ3Jlc3MYCSADKAkSEAoI",
+            "cGxhdGZvcm0YCiABKAlCDEIKVXNlclByb3Rvc2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Com.Inferno.Protos.SharedEnumsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Com.Inferno.Protos.User), global::Com.Inferno.Protos.User.Parser, new[]{ "Id", "Name", "FbId", "Udid", "Platform" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Com.Inferno.Protos.UserCreate), global::Com.Inferno.Protos.UserCreate.Parser, new[]{ "Name", "FbId", "Udid", "Platform" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Inferno.Protos.CreateUserResponseProto), global::Com.Inferno.Protos.CreateUserResponseProto.Parser, new[]{ "Message", "Status", "Payload" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Inferno.Protos.CreateUserResponseProto), global::Com.Inferno.Protos.CreateUserResponseProto.Parser, new[]{ "Message", "Status", "Payload" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Inferno.Protos.UserProfile), global::Com.Inferno.Protos.UserProfile.Parser, new[]{ "Username", "Xp", "Gold", "Gems", "Slots", "Trophies", "Clanid", "ItemsUnlocked", "ItemsInProgress", "Platform" }, null, null, null)
           }));
     }
     #endregion
@@ -675,6 +680,363 @@ namespace Com.Inferno.Protos {
           }
           case 26: {
             Payload = input.ReadBytes();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class UserProfile : pb::IMessage<UserProfile> {
+    private static readonly pb::MessageParser<UserProfile> _parser = new pb::MessageParser<UserProfile>(() => new UserProfile());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<UserProfile> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Com.Inferno.Protos.UserReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserProfile() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserProfile(UserProfile other) : this() {
+      username_ = other.username_;
+      xp_ = other.xp_;
+      gold_ = other.gold_;
+      gems_ = other.gems_;
+      slots_ = other.slots_.Clone();
+      trophies_ = other.trophies_;
+      clanid_ = other.clanid_;
+      itemsUnlocked_ = other.itemsUnlocked_.Clone();
+      itemsInProgress_ = other.itemsInProgress_.Clone();
+      platform_ = other.platform_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserProfile Clone() {
+      return new UserProfile(this);
+    }
+
+    /// <summary>Field number for the "username" field.</summary>
+    public const int UsernameFieldNumber = 1;
+    private string username_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Username {
+      get { return username_; }
+      set {
+        username_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "xp" field.</summary>
+    public const int XpFieldNumber = 2;
+    private int xp_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Xp {
+      get { return xp_; }
+      set {
+        xp_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gold" field.</summary>
+    public const int GoldFieldNumber = 3;
+    private int gold_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Gold {
+      get { return gold_; }
+      set {
+        gold_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "gems" field.</summary>
+    public const int GemsFieldNumber = 4;
+    private int gems_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Gems {
+      get { return gems_; }
+      set {
+        gems_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "slots" field.</summary>
+    public const int SlotsFieldNumber = 5;
+    private static readonly pb::FieldCodec<string> _repeated_slots_codec
+        = pb::FieldCodec.ForString(42);
+    private readonly pbc::RepeatedField<string> slots_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> Slots {
+      get { return slots_; }
+    }
+
+    /// <summary>Field number for the "trophies" field.</summary>
+    public const int TrophiesFieldNumber = 6;
+    private int trophies_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int Trophies {
+      get { return trophies_; }
+      set {
+        trophies_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "clanid" field.</summary>
+    public const int ClanidFieldNumber = 7;
+    private string clanid_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Clanid {
+      get { return clanid_; }
+      set {
+        clanid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "itemsUnlocked" field.</summary>
+    public const int ItemsUnlockedFieldNumber = 8;
+    private static readonly pb::FieldCodec<string> _repeated_itemsUnlocked_codec
+        = pb::FieldCodec.ForString(66);
+    private readonly pbc::RepeatedField<string> itemsUnlocked_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> ItemsUnlocked {
+      get { return itemsUnlocked_; }
+    }
+
+    /// <summary>Field number for the "itemsInProgress" field.</summary>
+    public const int ItemsInProgressFieldNumber = 9;
+    private static readonly pb::FieldCodec<string> _repeated_itemsInProgress_codec
+        = pb::FieldCodec.ForString(74);
+    private readonly pbc::RepeatedField<string> itemsInProgress_ = new pbc::RepeatedField<string>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> ItemsInProgress {
+      get { return itemsInProgress_; }
+    }
+
+    /// <summary>Field number for the "platform" field.</summary>
+    public const int PlatformFieldNumber = 10;
+    private string platform_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Platform {
+      get { return platform_; }
+      set {
+        platform_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as UserProfile);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(UserProfile other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Username != other.Username) return false;
+      if (Xp != other.Xp) return false;
+      if (Gold != other.Gold) return false;
+      if (Gems != other.Gems) return false;
+      if(!slots_.Equals(other.slots_)) return false;
+      if (Trophies != other.Trophies) return false;
+      if (Clanid != other.Clanid) return false;
+      if(!itemsUnlocked_.Equals(other.itemsUnlocked_)) return false;
+      if(!itemsInProgress_.Equals(other.itemsInProgress_)) return false;
+      if (Platform != other.Platform) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Username.Length != 0) hash ^= Username.GetHashCode();
+      if (Xp != 0) hash ^= Xp.GetHashCode();
+      if (Gold != 0) hash ^= Gold.GetHashCode();
+      if (Gems != 0) hash ^= Gems.GetHashCode();
+      hash ^= slots_.GetHashCode();
+      if (Trophies != 0) hash ^= Trophies.GetHashCode();
+      if (Clanid.Length != 0) hash ^= Clanid.GetHashCode();
+      hash ^= itemsUnlocked_.GetHashCode();
+      hash ^= itemsInProgress_.GetHashCode();
+      if (Platform.Length != 0) hash ^= Platform.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Username.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Username);
+      }
+      if (Xp != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Xp);
+      }
+      if (Gold != 0) {
+        output.WriteRawTag(24);
+        output.WriteInt32(Gold);
+      }
+      if (Gems != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Gems);
+      }
+      slots_.WriteTo(output, _repeated_slots_codec);
+      if (Trophies != 0) {
+        output.WriteRawTag(48);
+        output.WriteInt32(Trophies);
+      }
+      if (Clanid.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Clanid);
+      }
+      itemsUnlocked_.WriteTo(output, _repeated_itemsUnlocked_codec);
+      itemsInProgress_.WriteTo(output, _repeated_itemsInProgress_codec);
+      if (Platform.Length != 0) {
+        output.WriteRawTag(82);
+        output.WriteString(Platform);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Username.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Username);
+      }
+      if (Xp != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Xp);
+      }
+      if (Gold != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Gold);
+      }
+      if (Gems != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Gems);
+      }
+      size += slots_.CalculateSize(_repeated_slots_codec);
+      if (Trophies != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Trophies);
+      }
+      if (Clanid.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Clanid);
+      }
+      size += itemsUnlocked_.CalculateSize(_repeated_itemsUnlocked_codec);
+      size += itemsInProgress_.CalculateSize(_repeated_itemsInProgress_codec);
+      if (Platform.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Platform);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(UserProfile other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Username.Length != 0) {
+        Username = other.Username;
+      }
+      if (other.Xp != 0) {
+        Xp = other.Xp;
+      }
+      if (other.Gold != 0) {
+        Gold = other.Gold;
+      }
+      if (other.Gems != 0) {
+        Gems = other.Gems;
+      }
+      slots_.Add(other.slots_);
+      if (other.Trophies != 0) {
+        Trophies = other.Trophies;
+      }
+      if (other.Clanid.Length != 0) {
+        Clanid = other.Clanid;
+      }
+      itemsUnlocked_.Add(other.itemsUnlocked_);
+      itemsInProgress_.Add(other.itemsInProgress_);
+      if (other.Platform.Length != 0) {
+        Platform = other.Platform;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Username = input.ReadString();
+            break;
+          }
+          case 16: {
+            Xp = input.ReadInt32();
+            break;
+          }
+          case 24: {
+            Gold = input.ReadInt32();
+            break;
+          }
+          case 32: {
+            Gems = input.ReadInt32();
+            break;
+          }
+          case 42: {
+            slots_.AddEntriesFrom(input, _repeated_slots_codec);
+            break;
+          }
+          case 48: {
+            Trophies = input.ReadInt32();
+            break;
+          }
+          case 58: {
+            Clanid = input.ReadString();
+            break;
+          }
+          case 66: {
+            itemsUnlocked_.AddEntriesFrom(input, _repeated_itemsUnlocked_codec);
+            break;
+          }
+          case 74: {
+            itemsInProgress_.AddEntriesFrom(input, _repeated_itemsInProgress_codec);
+            break;
+          }
+          case 82: {
+            Platform = input.ReadString();
             break;
           }
         }

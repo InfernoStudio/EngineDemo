@@ -24,15 +24,17 @@ namespace Com.Inferno.Protos {
     static SharedEnumsReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFTaGFyZWRFbnVtcy5wcm90bxISY29tLmluZmVybm8ucHJvdG9zKmsKC1Jl",
+            "ChFTaGFyZWRFbnVtcy5wcm90bxISY29tLmluZmVybm8ucHJvdG9zKn8KC1Jl",
             "cXVlc3RUeXBlEhAKDFJFUVVFU1RfTk9ORRAAEgsKB1NUQVJUVVAQARITCg9D",
             "UkVBVEVfTkVXX1VTRVIQAhITCg9MT0FEX1NUUlVDVFVSRVMQAxITCg9JTl9B",
-            "UFBfUFVSQ0hBU0UQBCqRAQoMUmVzcG9uc2VUeXBlEhEKDVJFU1BPTlNFX05P",
-            "TkUQABIUChBTVEFSVFVQX1JFU1BPTlNFEAESHAoYQ1JFQVRFX05FV19VU0VS",
-            "X1JFU1BPTlNFEAISHAoYTE9BRF9TVFJVQ1RVUkVTX1JFU1BPTlNFEAMSHAoY",
-            "SU5fQVBQX1BVUkNIQVNFX1JFU1BPTlNFEAQqUQoOUmVzcG9uc2VTdGF0dXMS",
-            "GAoUUkVTUE9OU0VfU1RBVFVTX05PTkUQABILCgdTVUNDRVNTEAESCAoERkFJ",
-            "TBACEg4KClVTRVJfRVhJU1QQA0INQgtTaGFyZWRFbnVtc2IGcHJvdG8z"));
+            "UFBfUFVSQ0hBU0UQBBISCg5MT0FEX0dBTUVfREFUQRAFKq4BCgxSZXNwb25z",
+            "ZVR5cGUSEQoNUkVTUE9OU0VfTk9ORRAAEhQKEFNUQVJUVVBfUkVTUE9OU0UQ",
+            "ARIcChhDUkVBVEVfTkVXX1VTRVJfUkVTUE9OU0UQAhIcChhMT0FEX1NUUlVD",
+            "VFVSRVNfUkVTUE9OU0UQAxIcChhJTl9BUFBfUFVSQ0hBU0VfUkVTUE9OU0UQ",
+            "BBIbChdMT0FEX0dBTUVfREFUQV9SRVNQT05TRRAFKlEKDlJlc3BvbnNlU3Rh",
+            "dHVzEhgKFFJFU1BPTlNFX1NUQVRVU19OT05FEAASCwoHU1VDQ0VTUxABEggK",
+            "BEZBSUwQAhIOCgpVU0VSX0VYSVNUEANCDUILU2hhcmVkRW51bXNiBnByb3Rv",
+            "Mw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Com.Inferno.Protos.RequestType), typeof(global::Com.Inferno.Protos.ResponseType), typeof(global::Com.Inferno.Protos.ResponseStatus), }, null));
@@ -47,6 +49,7 @@ namespace Com.Inferno.Protos {
     [pbr::OriginalName("CREATE_NEW_USER")] CreateNewUser = 2,
     [pbr::OriginalName("LOAD_STRUCTURES")] LoadStructures = 3,
     [pbr::OriginalName("IN_APP_PURCHASE")] InAppPurchase = 4,
+    [pbr::OriginalName("LOAD_GAME_DATA")] LoadGameData = 5,
   }
 
   public enum ResponseType {
@@ -55,6 +58,7 @@ namespace Com.Inferno.Protos {
     [pbr::OriginalName("CREATE_NEW_USER_RESPONSE")] CreateNewUserResponse = 2,
     [pbr::OriginalName("LOAD_STRUCTURES_RESPONSE")] LoadStructuresResponse = 3,
     [pbr::OriginalName("IN_APP_PURCHASE_RESPONSE")] InAppPurchaseResponse = 4,
+    [pbr::OriginalName("LOAD_GAME_DATA_RESPONSE")] LoadGameDataResponse = 5,
   }
 
   public enum ResponseStatus {

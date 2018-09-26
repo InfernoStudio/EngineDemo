@@ -13,7 +13,8 @@ public class GameConstants
 
 	public class Player
 	{
-		public const string STARTUP_PLAYER_STATUS = "PlayerStatus"; 
+		public const string STARTUP_PLAYER_STATUS = "STARTUP_PLAYER_STATUS"; 
+		public const string PLAYER_PROFILE = "PLAYER_PROFILE";
 	}
 
 }
