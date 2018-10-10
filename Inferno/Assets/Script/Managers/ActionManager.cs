@@ -11,18 +11,24 @@ public class ActionManager : MonoBehaviour
 
 	private static ActionManager _instance;
 
-	public static ActionManager instance {
-		get {
-			if(_instance == null)
-			{
-				_instance = FindObjectOfType(typeof(ActionManager)) as ActionManager;
-
-				if (_instance == null)
-					Debug.LogError("There is no ActionManager in the scene. Please add ActionManager script to one of the gameObject");
-			}
-			return _instance;
-		}
+	public void Awake()
+	{
+		instance = this;
 	}
+
+	public static ActionManager instance;
+	//{
+	//	get {
+	//		if(_instance == null)
+	//		{
+	//			_instance = FindObjectOfType(typeof(ActionManager)) as ActionManager;
+
+	//			if (_instance == null)
+	//				Debug.LogError("There is no ActionManager in the scene. Please add ActionManager script to one of the gameObject");
+	//		}
+	//		return _instance;
+	//	}
+	//}
 	
 	public static GenericEvent genericPoupEvents = new GenericEvent();
 

@@ -168,6 +168,10 @@ public class NetworkManager : MonoBehaviour
 				return StartUpResponse.Parser.ParseFrom(response.Payload);
 			case ResponseType.LoadGameDataResponse:
 				return DataResponse.Parser.ParseFrom(response.Payload);
+			case ResponseType.RewardUserResponse:
+				return RewardEvent.Parser.ParseFrom(response.Payload);
+			case ResponseType.UserUpdateResponse:
+				return UserUpdateResponse.Parser.ParseFrom(response.Payload);
 			default:
                 return null;
         }

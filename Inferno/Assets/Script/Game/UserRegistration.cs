@@ -54,8 +54,7 @@ public class UserRegistration : Popup
 			ActionManager.instance.TriggerEvent(StringConstants.EventNames.UPDATE_PLAYER_PROFILE, parameters);
 			Debug.Log("User with same device id already exist : " + user.Username);
 		}
-
-		DataManager.Instance.SendDataRequest();
+		DataManager.SendDataRequest();
 		Close();
 	}
 

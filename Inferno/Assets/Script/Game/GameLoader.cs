@@ -20,6 +20,9 @@ public class GameLoader : MonoBehaviour
 
 	void Start ()
 	{
+		DataManager.SendDataRequest();
+
+
 		StartUp startUp = new StartUp();
 		VersionProto version = new VersionProto();
 

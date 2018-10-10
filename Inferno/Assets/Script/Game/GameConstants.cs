@@ -17,4 +17,9 @@ public class GameConstants
 		public const string PLAYER_PROFILE = "PLAYER_PROFILE";
 	}
 
+	public class MessageDataKeys
+	{
+		public const string REWARD_LIST = "REWARD_LIST";
+	}
+
 }

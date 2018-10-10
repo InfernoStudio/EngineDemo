@@ -25,24 +25,30 @@ namespace Com.Inferno.Protos {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "CgpVc2VyLnByb3RvEhJjb20uaW5mZXJuby5wcm90b3MaEVNoYXJlZEVudW1z",
-            "LnByb3RvIk8KBFVzZXISCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRINCgVm",
-            "Yl9pZBgDIAEoCRIMCgR1ZGlkGAQgASgJEhAKCHBsYXRmb3JtGAUgASgJIkkK",
-            "ClVzZXJDcmVhdGUSDAoEbmFtZRgBIAEoCRINCgVmYl9pZBgCIAEoCRIMCgR1",
-            "ZGlkGAMgASgJEhAKCHBsYXRmb3JtGAQgASgJIm8KF0NyZWF0ZVVzZXJSZXNw",
-            "b25zZVByb3RvEg8KB21lc3NhZ2UYASABKAkSMgoGc3RhdHVzGAIgASgOMiIu",
-            "Y29tLmluZmVybm8ucHJvdG9zLlJlc3BvbnNlU3RhdHVzEg8KB3BheWxvYWQY",
-            "AyABKAwiugEKC1VzZXJQcm9maWxlEhAKCHVzZXJuYW1lGAEgASgJEgoKAnhw",
-            "GAIgASgFEgwKBGdvbGQYAyABKAUSDAoEZ2VtcxgEIAEoBRINCgVzbG90cxgF",
-            "IAMoCRIQCgh0cm9waGllcxgGIAEoBRIOCgZjbGFuaWQYByABKAkSFQoNaXRl",
-            "bXNVbmxvY2tlZBgIIAMoCRIXCg9pdGVtc0luUHJvZ3Jlc3MYCSADKAkSEAoI",
-            "cGxhdGZvcm0YCiABKAlCDEIKVXNlclByb3Rvc2IGcHJvdG8z"));
+            "LnByb3RvIkMKBFVzZXISCgoCaWQYASABKAkSDAoEbmFtZRgCIAEoCRIQCghw",
+            "bGF0Zm9ybRgFIAEoCRIPCgd1c2VyX2lkGAYgASgJIkkKClVzZXJDcmVhdGUS",
+            "DAoEbmFtZRgBIAEoCRINCgVmYl9pZBgCIAEoCRIMCgR1ZGlkGAMgASgJEhAK",
+            "CHBsYXRmb3JtGAQgASgJIm8KF0NyZWF0ZVVzZXJSZXNwb25zZVByb3RvEg8K",
+            "B21lc3NhZ2UYASABKAkSMgoGc3RhdHVzGAIgASgOMiIuY29tLmluZmVybm8u",
+            "cHJvdG9zLlJlc3BvbnNlU3RhdHVzEg8KB3BheWxvYWQYAyABKAwiywEKC1Vz",
+            "ZXJQcm9maWxlEhAKCHVzZXJuYW1lGAEgASgJEgoKAnhwGAIgASgFEgwKBGdv",
+            "bGQYAyABKAUSDAoEZ2VtcxgEIAEoBRINCgVzbG90cxgFIAMoCRIQCgh0cm9w",
+            "aGllcxgGIAEoBRIOCgZjbGFuaWQYByABKAkSFQoNaXRlbXNVbmxvY2tlZBgI",
+            "IAMoCRIXCg9pdGVtc0luUHJvZ3Jlc3MYCSADKAkSEAoIcGxhdGZvcm0YCiAB",
+            "KAkSDwoHdXNlcl9pZBgLIAEoCSJUChJVc2VyVXBkYXRlUmVzcG9uc2USDAoE",
+            "bmFtZRgBIAEoCRINCgVmYl9pZBgCIAEoCRIPCgd1c2VyX2lkGAMgASgJEhAK",
+            "CHBsYXRmb3JtGAQgASgJIlQKGVVzZXJQcm9maWxlVXBkYXRlUmVzcG9uc2US",
+            "NwoOdXBkYXRlZFByb2ZpbGUYASABKAsyHy5jb20uaW5mZXJuby5wcm90b3Mu",
+            "VXNlclByb2ZpbGVCDEIKVXNlclByb3Rvc2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Com.Inferno.Protos.SharedEnumsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Inferno.Protos.User), global::Com.Inferno.Protos.User.Parser, new[]{ "Id", "Name", "FbId", "Udid", "Platform" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Inferno.Protos.User), global::Com.Inferno.Protos.User.Parser, new[]{ "Id", "Name", "Platform", "UserId" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Com.Inferno.Protos.UserCreate), global::Com.Inferno.Protos.UserCreate.Parser, new[]{ "Name", "FbId", "Udid", "Platform" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Com.Inferno.Protos.CreateUserResponseProto), global::Com.Inferno.Protos.CreateUserResponseProto.Parser, new[]{ "Message", "Status", "Payload" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Inferno.Protos.UserProfile), global::Com.Inferno.Protos.UserProfile.Parser, new[]{ "Username", "Xp", "Gold", "Gems", "Slots", "Trophies", "Clanid", "ItemsUnlocked", "ItemsInProgress", "Platform" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Inferno.Protos.UserProfile), global::Com.Inferno.Protos.UserProfile.Parser, new[]{ "Username", "Xp", "Gold", "Gems", "Slots", "Trophies", "Clanid", "ItemsUnlocked", "ItemsInProgress", "Platform", "UserId" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Inferno.Protos.UserUpdateResponse), global::Com.Inferno.Protos.UserUpdateResponse.Parser, new[]{ "Name", "FbId", "UserId", "Platform" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Com.Inferno.Protos.UserProfileUpdateResponse), global::Com.Inferno.Protos.UserProfileUpdateResponse.Parser, new[]{ "UpdatedProfile" }, null, null, null)
           }));
     }
     #endregion
@@ -76,9 +82,8 @@ namespace Com.Inferno.Protos {
     public User(User other) : this() {
       id_ = other.id_;
       name_ = other.name_;
-      fbId_ = other.fbId_;
-      udid_ = other.udid_;
       platform_ = other.platform_;
+      userId_ = other.userId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -109,28 +114,6 @@ namespace Com.Inferno.Protos {
       }
     }
 
-    /// <summary>Field number for the "fb_id" field.</summary>
-    public const int FbIdFieldNumber = 3;
-    private string fbId_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string FbId {
-      get { return fbId_; }
-      set {
-        fbId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "udid" field.</summary>
-    public const int UdidFieldNumber = 4;
-    private string udid_ = "";
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Udid {
-      get { return udid_; }
-      set {
-        udid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
     /// <summary>Field number for the "platform" field.</summary>
     public const int PlatformFieldNumber = 5;
     private string platform_ = "";
@@ -139,6 +122,17 @@ namespace Com.Inferno.Protos {
       get { return platform_; }
       set {
         platform_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "user_id" field.</summary>
+    public const int UserIdFieldNumber = 6;
+    private string userId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string UserId {
+      get { return userId_; }
+      set {
+        userId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -157,9 +151,8 @@ namespace Com.Inferno.Protos {
       }
       if (Id != other.Id) return false;
       if (Name != other.Name) return false;
-      if (FbId != other.FbId) return false;
-      if (Udid != other.Udid) return false;
       if (Platform != other.Platform) return false;
+      if (UserId != other.UserId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -168,9 +161,8 @@ namespace Com.Inferno.Protos {
       int hash = 1;
       if (Id.Length != 0) hash ^= Id.GetHashCode();
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (FbId.Length != 0) hash ^= FbId.GetHashCode();
-      if (Udid.Length != 0) hash ^= Udid.GetHashCode();
       if (Platform.Length != 0) hash ^= Platform.GetHashCode();
+      if (UserId.Length != 0) hash ^= UserId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -192,17 +184,13 @@ namespace Com.Inferno.Protos {
         output.WriteRawTag(18);
         output.WriteString(Name);
       }
-      if (FbId.Length != 0) {
-        output.WriteRawTag(26);
-        output.WriteString(FbId);
-      }
-      if (Udid.Length != 0) {
-        output.WriteRawTag(34);
-        output.WriteString(Udid);
-      }
       if (Platform.Length != 0) {
         output.WriteRawTag(42);
         output.WriteString(Platform);
+      }
+      if (UserId.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(UserId);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -218,14 +206,11 @@ namespace Com.Inferno.Protos {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (FbId.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(FbId);
-      }
-      if (Udid.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Udid);
-      }
       if (Platform.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Platform);
+      }
+      if (UserId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(UserId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -244,14 +229,11 @@ namespace Com.Inferno.Protos {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.FbId.Length != 0) {
-        FbId = other.FbId;
-      }
-      if (other.Udid.Length != 0) {
-        Udid = other.Udid;
-      }
       if (other.Platform.Length != 0) {
         Platform = other.Platform;
+      }
+      if (other.UserId.Length != 0) {
+        UserId = other.UserId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -272,16 +254,12 @@ namespace Com.Inferno.Protos {
             Name = input.ReadString();
             break;
           }
-          case 26: {
-            FbId = input.ReadString();
-            break;
-          }
-          case 34: {
-            Udid = input.ReadString();
-            break;
-          }
           case 42: {
             Platform = input.ReadString();
+            break;
+          }
+          case 50: {
+            UserId = input.ReadString();
             break;
           }
         }
@@ -723,6 +701,7 @@ namespace Com.Inferno.Protos {
       itemsUnlocked_ = other.itemsUnlocked_.Clone();
       itemsInProgress_ = other.itemsInProgress_.Clone();
       platform_ = other.platform_;
+      userId_ = other.userId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -838,6 +817,17 @@ namespace Com.Inferno.Protos {
       }
     }
 
+    /// <summary>Field number for the "user_id" field.</summary>
+    public const int UserIdFieldNumber = 11;
+    private string userId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string UserId {
+      get { return userId_; }
+      set {
+        userId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UserProfile);
@@ -861,6 +851,7 @@ namespace Com.Inferno.Protos {
       if(!itemsUnlocked_.Equals(other.itemsUnlocked_)) return false;
       if(!itemsInProgress_.Equals(other.itemsInProgress_)) return false;
       if (Platform != other.Platform) return false;
+      if (UserId != other.UserId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -877,6 +868,7 @@ namespace Com.Inferno.Protos {
       hash ^= itemsUnlocked_.GetHashCode();
       hash ^= itemsInProgress_.GetHashCode();
       if (Platform.Length != 0) hash ^= Platform.GetHashCode();
+      if (UserId.Length != 0) hash ^= UserId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -921,6 +913,10 @@ namespace Com.Inferno.Protos {
         output.WriteRawTag(82);
         output.WriteString(Platform);
       }
+      if (UserId.Length != 0) {
+        output.WriteRawTag(90);
+        output.WriteString(UserId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -952,6 +948,9 @@ namespace Com.Inferno.Protos {
       size += itemsInProgress_.CalculateSize(_repeated_itemsInProgress_codec);
       if (Platform.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Platform);
+      }
+      if (UserId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(UserId);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -987,6 +986,9 @@ namespace Com.Inferno.Protos {
       itemsInProgress_.Add(other.itemsInProgress_);
       if (other.Platform.Length != 0) {
         Platform = other.Platform;
+      }
+      if (other.UserId.Length != 0) {
+        UserId = other.UserId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1037,6 +1039,358 @@ namespace Com.Inferno.Protos {
           }
           case 82: {
             Platform = input.ReadString();
+            break;
+          }
+          case 90: {
+            UserId = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class UserUpdateResponse : pb::IMessage<UserUpdateResponse> {
+    private static readonly pb::MessageParser<UserUpdateResponse> _parser = new pb::MessageParser<UserUpdateResponse>(() => new UserUpdateResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<UserUpdateResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Com.Inferno.Protos.UserReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserUpdateResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserUpdateResponse(UserUpdateResponse other) : this() {
+      name_ = other.name_;
+      fbId_ = other.fbId_;
+      userId_ = other.userId_;
+      platform_ = other.platform_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserUpdateResponse Clone() {
+      return new UserUpdateResponse(this);
+    }
+
+    /// <summary>Field number for the "name" field.</summary>
+    public const int NameFieldNumber = 1;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "fb_id" field.</summary>
+    public const int FbIdFieldNumber = 2;
+    private string fbId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string FbId {
+      get { return fbId_; }
+      set {
+        fbId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "user_id" field.</summary>
+    public const int UserIdFieldNumber = 3;
+    private string userId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string UserId {
+      get { return userId_; }
+      set {
+        userId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "platform" field.</summary>
+    public const int PlatformFieldNumber = 4;
+    private string platform_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Platform {
+      get { return platform_; }
+      set {
+        platform_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as UserUpdateResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(UserUpdateResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      if (FbId != other.FbId) return false;
+      if (UserId != other.UserId) return false;
+      if (Platform != other.Platform) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (FbId.Length != 0) hash ^= FbId.GetHashCode();
+      if (UserId.Length != 0) hash ^= UserId.GetHashCode();
+      if (Platform.Length != 0) hash ^= Platform.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Name);
+      }
+      if (FbId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(FbId);
+      }
+      if (UserId.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(UserId);
+      }
+      if (Platform.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(Platform);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (FbId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FbId);
+      }
+      if (UserId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(UserId);
+      }
+      if (Platform.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Platform);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(UserUpdateResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      if (other.FbId.Length != 0) {
+        FbId = other.FbId;
+      }
+      if (other.UserId.Length != 0) {
+        UserId = other.UserId;
+      }
+      if (other.Platform.Length != 0) {
+        Platform = other.Platform;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Name = input.ReadString();
+            break;
+          }
+          case 18: {
+            FbId = input.ReadString();
+            break;
+          }
+          case 26: {
+            UserId = input.ReadString();
+            break;
+          }
+          case 34: {
+            Platform = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class UserProfileUpdateResponse : pb::IMessage<UserProfileUpdateResponse> {
+    private static readonly pb::MessageParser<UserProfileUpdateResponse> _parser = new pb::MessageParser<UserProfileUpdateResponse>(() => new UserProfileUpdateResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<UserProfileUpdateResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Com.Inferno.Protos.UserReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserProfileUpdateResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserProfileUpdateResponse(UserProfileUpdateResponse other) : this() {
+      updatedProfile_ = other.updatedProfile_ != null ? other.updatedProfile_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public UserProfileUpdateResponse Clone() {
+      return new UserProfileUpdateResponse(this);
+    }
+
+    /// <summary>Field number for the "updatedProfile" field.</summary>
+    public const int UpdatedProfileFieldNumber = 1;
+    private global::Com.Inferno.Protos.UserProfile updatedProfile_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Com.Inferno.Protos.UserProfile UpdatedProfile {
+      get { return updatedProfile_; }
+      set {
+        updatedProfile_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as UserProfileUpdateResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(UserProfileUpdateResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(UpdatedProfile, other.UpdatedProfile)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (updatedProfile_ != null) hash ^= UpdatedProfile.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (updatedProfile_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(UpdatedProfile);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (updatedProfile_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(UpdatedProfile);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(UserProfileUpdateResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.updatedProfile_ != null) {
+        if (updatedProfile_ == null) {
+          updatedProfile_ = new global::Com.Inferno.Protos.UserProfile();
+        }
+        UpdatedProfile.MergeFrom(other.UpdatedProfile);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (updatedProfile_ == null) {
+              updatedProfile_ = new global::Com.Inferno.Protos.UserProfile();
+            }
+            input.ReadMessage(updatedProfile_);
             break;
           }
         }

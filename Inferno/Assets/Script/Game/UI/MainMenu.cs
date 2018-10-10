@@ -14,7 +14,6 @@ public class MainMenu : MonoBehaviour
 		if (playerStatus == StartUpResponse.Types.PlayerStatus.PlayerFound)
 		{
 			Util.Log("Player Found");
-			DataManager.Instance.SendDataRequest();
 			Hashtable table = new Hashtable();
 			table.Add(GameConstants.Player.PLAYER_PROFILE, playerProfile);
 			ActionManager.instance.TriggerEvent(StringConstants.EventNames.UPDATE_PLAYER_PROFILE, table);
@@ -27,11 +26,7 @@ public class MainMenu : MonoBehaviour
 			ActionManager.instance.TriggerEvent(StringConstants.EventNames.OPEN_USER_REGISTRATION, table);
 		}
 	}
-
-	public void SendDataRequest()
-	{
-		DataManager.Instance.SendDataRequest();
-	}
+	
 
 
 }

@@ -16,7 +16,6 @@ public class UserProfileWidget : MonoBehaviour
 	[SerializeField]
 	private Image playerAvatar;
 
-
 	private void Awake()
 	{
 		ActionManager.instance.SubscribeToEvent(StringConstants.EventNames.UPDATE_PLAYER_PROFILE, UpdatePlayer);
@@ -25,7 +24,6 @@ public class UserProfileWidget : MonoBehaviour
 	private void OnDestroy()
 	{
 		ActionManager.instance.UnsubscribeToEvent(StringConstants.EventNames.UPDATE_PLAYER_PROFILE, UpdatePlayer);
-
 	}
 
 	public void UpdatePlayer(Hashtable parameters)

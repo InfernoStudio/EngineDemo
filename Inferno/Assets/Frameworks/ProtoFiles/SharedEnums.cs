@@ -24,17 +24,18 @@ namespace Com.Inferno.Protos {
     static SharedEnumsReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFTaGFyZWRFbnVtcy5wcm90bxISY29tLmluZmVybm8ucHJvdG9zKn8KC1Jl",
-            "cXVlc3RUeXBlEhAKDFJFUVVFU1RfTk9ORRAAEgsKB1NUQVJUVVAQARITCg9D",
-            "UkVBVEVfTkVXX1VTRVIQAhITCg9MT0FEX1NUUlVDVFVSRVMQAxITCg9JTl9B",
-            "UFBfUFVSQ0hBU0UQBBISCg5MT0FEX0dBTUVfREFUQRAFKq4BCgxSZXNwb25z",
-            "ZVR5cGUSEQoNUkVTUE9OU0VfTk9ORRAAEhQKEFNUQVJUVVBfUkVTUE9OU0UQ",
-            "ARIcChhDUkVBVEVfTkVXX1VTRVJfUkVTUE9OU0UQAhIcChhMT0FEX1NUUlVD",
-            "VFVSRVNfUkVTUE9OU0UQAxIcChhJTl9BUFBfUFVSQ0hBU0VfUkVTUE9OU0UQ",
-            "BBIbChdMT0FEX0dBTUVfREFUQV9SRVNQT05TRRAFKlEKDlJlc3BvbnNlU3Rh",
-            "dHVzEhgKFFJFU1BPTlNFX1NUQVRVU19OT05FEAASCwoHU1VDQ0VTUxABEggK",
-            "BEZBSUwQAhIOCgpVU0VSX0VYSVNUEANCDUILU2hhcmVkRW51bXNiBnByb3Rv",
-            "Mw=="));
+            "ChFTaGFyZWRFbnVtcy5wcm90bxISY29tLmluZmVybm8ucHJvdG9zKpABCgtS",
+            "ZXF1ZXN0VHlwZRIQCgxSRVFVRVNUX05PTkUQABILCgdTVEFSVFVQEAESEwoP",
+            "Q1JFQVRFX05FV19VU0VSEAISEwoPTE9BRF9TVFJVQ1RVUkVTEAMSEwoPSU5f",
+            "QVBQX1BVUkNIQVNFEAQSEgoOTE9BRF9HQU1FX0RBVEEQBRIPCgtSRVdBUkRf",
+            "VVNFUhAGKuIBCgxSZXNwb25zZVR5cGUSEQoNUkVTUE9OU0VfTk9ORRAAEhQK",
+            "EFNUQVJUVVBfUkVTUE9OU0UQARIcChhDUkVBVEVfTkVXX1VTRVJfUkVTUE9O",
+            "U0UQAhIcChhMT0FEX1NUUlVDVFVSRVNfUkVTUE9OU0UQAxIcChhJTl9BUFBf",
+            "UFVSQ0hBU0VfUkVTUE9OU0UQBBIbChdMT0FEX0dBTUVfREFUQV9SRVNQT05T",
+            "RRAFEhgKFFJFV0FSRF9VU0VSX1JFU1BPTlNFEAYSGAoUVVNFUl9VUERBVEVf",
+            "UkVTUE9OU0UQBypRCg5SZXNwb25zZVN0YXR1cxIYChRSRVNQT05TRV9TVEFU",
+            "VVNfTk9ORRAAEgsKB1NVQ0NFU1MQARIICgRGQUlMEAISDgoKVVNFUl9FWElT",
+            "VBADQg1CC1NoYXJlZEVudW1zYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Com.Inferno.Protos.RequestType), typeof(global::Com.Inferno.Protos.ResponseType), typeof(global::Com.Inferno.Protos.ResponseStatus), }, null));
@@ -50,6 +51,7 @@ namespace Com.Inferno.Protos {
     [pbr::OriginalName("LOAD_STRUCTURES")] LoadStructures = 3,
     [pbr::OriginalName("IN_APP_PURCHASE")] InAppPurchase = 4,
     [pbr::OriginalName("LOAD_GAME_DATA")] LoadGameData = 5,
+    [pbr::OriginalName("REWARD_USER")] RewardUser = 6,
   }
 
   public enum ResponseType {
@@ -59,6 +61,8 @@ namespace Com.Inferno.Protos {
     [pbr::OriginalName("LOAD_STRUCTURES_RESPONSE")] LoadStructuresResponse = 3,
     [pbr::OriginalName("IN_APP_PURCHASE_RESPONSE")] InAppPurchaseResponse = 4,
     [pbr::OriginalName("LOAD_GAME_DATA_RESPONSE")] LoadGameDataResponse = 5,
+    [pbr::OriginalName("REWARD_USER_RESPONSE")] RewardUserResponse = 6,
+    [pbr::OriginalName("USER_UPDATE_RESPONSE")] UserUpdateResponse = 7,
   }
 
   public enum ResponseStatus {

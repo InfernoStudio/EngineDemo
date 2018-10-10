@@ -15,6 +15,12 @@ public class StringConstants  {
 		public const string OPEN_GENERIC_POPUP = "OPEN_GENERIC_POPUP";
 		public const string UPDATE_PLAYER_PROFILE = "UPDATE_PLAYER_PROFILE";
 		public const string LOAD_GAME_DATA = "LOAD_GAME_DATA";
+		public const string UPDATE_SLOTS_DATA = "UPDATE_SLOTS_DATA";
+		public const string UPDATE_GAME_DATA = "UPDATE_GAME_DATA";
 	}
+
+	
+
+
 
 }

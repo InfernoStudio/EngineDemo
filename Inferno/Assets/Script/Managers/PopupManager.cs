@@ -3,10 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+
+[Serializable]
+public enum PopupEvents
+{
+	OPEN_GENERIC_POPUP = 1,
+	OPEN_USER_REGISTRATION = 2,
+}
+
 [Serializable]
 public class PopupPair
 {
-	public string eventName;
+	public PopupEvents eventName;
 	public Popup popup;
 	public bool isPrefab;
 }
@@ -28,20 +36,20 @@ public class PopupManager : MonoBehaviour
 	{
 		for(int i = 0; i < popupReferences.Count; i++)
 		{
-			ActionManager.instance.SubscribeToEvent(popupReferences[i].eventName, OpenPopup);
+			ActionManager.instance.SubscribeToEvent(popupReferences[i].eventName.ToString(), OpenPopup);
 		}
 	}
 
 	public void OpenPopup(Hashtable properties)
 	{
-		Debug.LogError("has Event : " + properties[StringConstants.PropertyName.EVENT_NAME]);
 
 		string eventName = properties[StringConstants.PropertyName.EVENT_NAME] as string;
 
-		PopupPair popupPair = popupReferences.Find(item => item.eventName.Equals(eventName));
+		PopupPair popupPair = popupReferences.Find(item => item.eventName.ToString().Equals(eventName));
 		if (popupPair != null)
 		{
-			if(popupPair.isPrefab)
+			Debug.LogError("has Event : " + properties[StringConstants.PropertyName.EVENT_NAME]);
+			if (popupPair.isPrefab)
 			{
 				Popup genericPopup = Instantiate(popupPair.popup, popupPanel);
 				genericPopup.SetProperties(properties);
